@@ -26,5 +26,21 @@ namespace 第二次播放器
         {
             this.InitializeComponent();
         }
+        private void NavigationView_OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            if (PlayxItem.IsSelected)
+            {
+                MyFrame.Navigate(typeof(Playpage));
+                NavigationView.Header = "easyplayer2.0--播放本地文件";
+            }
+            else if (PlayyItem.IsSelected)
+            {
+                MyFrame.Navigate(typeof(Playypage));
+                NavigationView.Header = "easyplayer2.0--在线播放及下载";
+            }
+        }
+
+
+
     }
 }

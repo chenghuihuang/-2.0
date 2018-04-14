@@ -7,7 +7,33 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/fa.jpg" Opacity="0.5" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <NavigationView Name="NavigationView"
+                        SelectionChanged="NavigationView_OnSelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag="Playx" Name="PlayxItem"
+                                     Content="打开本地文件"
+                                     Icon="Home">
+                </NavigationViewItem>
+                <NavigationViewItem Tag="Playy" Name="PlayyItem"
+                                    Content="在线播放及下载">
+                    <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE710;"></FontIcon>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <NavigationView.Content>
+            <Frame Name="MyFrame"></Frame>
+            </NavigationView.Content>
+            <NavigationView.Header>
+                welcome to easyplayer2.0
+            </NavigationView.Header>
+        </NavigationView>         
     </Grid>
 </Page>
